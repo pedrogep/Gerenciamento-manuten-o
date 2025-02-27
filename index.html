@@ -1,23 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu portifolio</title>
+    <title>Meu Portfólio</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo do menu */
+        nav {
+            background-color: #007bff;
+            padding: 15px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ol li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ol li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ol li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Centralizar a imagem */
+        .header {
+            margin: 40px 0 20px;
+        }
+
+        .header img {
+            width: 400px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilo dos botões */
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .buttons a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .registro {
+            background-color: #dc3545;
+        }
+
+        .registro:hover {
+            background-color: #c82333;
+        }
+    </style>
 </head>
 <body>
-    <!--sumário-->
-<nav>
-    <ol>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sobre_mim.html">Sobre mim</a></li>
-        <li><a href="formacao.html">Minha Formação</a></li>
-        <li><a href="portifolio.html">Meu portifolio</a></li>
-        <li><a href="contato.html">Contato</a></li>
-    </ol>
-</nav>
-<h1>Meu portifolio online</h1>
-<img src="eu.jpg" alt="Minha imagem" width="300px" title="Pedro henrique Ferreira">
+
+    <!-- Cabeçalho -->
+    <div class="header">
+        <img src="logo_mecan.jpg" alt="Minha imagem" title="Pedro Henrique Ferreira">
+    </div>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="abrir_chamado.html">Abrir Chamado</a></li>
+            <li><a href="registro.html">Registros de Manutenção</a></li>
+        </ol>
+    </nav>
+
+    <h1>Abertura de chamados e gerenciamento de manutenções</h1>
+
+    <!-- Botões -->
+    <div class="buttons">
+        <a href="abrir_chamado.html">Abrir Chamado</a>
+        <a href="registro.html" class="registro">Registro</a>
+    </div>
+
 </body>
 </html>
