@@ -81,6 +81,36 @@
     .delete:hover {
         background-color: #c82333;
     }
+    /* Estilo dos botões */
+    .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .buttons a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .historico {
+            background-color: #28a745; /* Verde para o histórico */
+        }
+
+        .historico:hover {
+            background-color: #218838;
+        }
 </style>
 </head>
 <body>
@@ -92,93 +122,16 @@
  
         </ol>
     </nav>
-    <div class="container">
+    <div>
         <h2>Registro de Manutenção</h2>
-        
-        <form id="manutencaoForm">
-            <label>Máquina:</label>
-            <input type="text" id="maquina" required>
-            
-            <label>Data:</label>
-            <input type="date" id="data" required>
 
-            <label>Descrição:</label>
-            <textarea id="descricao" required></textarea>
-
-            <button type="submit">Salvar</button>
-        </form>
+    </div>
+    <div class="buttons">
+        <a href="historico_manutenção.html" class="historico">Consultar Histórico</a> <!-- Botão para consultar histórico -->
     </div>
 
-    <div class="filter-container">
-        <h3>Filtrar por Máquina:</h3>
-        <input type="text" id="filtro" onkeyup="filtrarTabela()" placeholder="Digite o nome da máquina">
-    </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Máquina</th>
-                <th>Data</th>
-                <th>Descrição</th>
-                <th>Ação</th>
-            </tr>
-        </thead>
-        <tbody id="tabelaManutencoes">
-            <!-- Dados serão inseridos aqui -->
-        </tbody>
-    </table>
-
-    <script>
-        document.getElementById("manutencaoForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            let maquina = document.getElementById("maquina").value;
-            let data = document.getElementById("data").value;
-            let descricao = document.getElementById("descricao").value;
-
-            let manutencoes = JSON.parse(localStorage.getItem("manutencoes")) || [];
-            manutencoes.push({ maquina, data, descricao });
-
-            localStorage.setItem("manutencoes", JSON.stringify(manutencoes));
-            atualizarTabela();
-            document.getElementById("manutencaoForm").reset();
-        });
-
-        function atualizarTabela() {
-            let manutencoes = JSON.parse(localStorage.getItem("manutencoes")) || [];
-            let tabela = document.getElementById("tabelaManutencoes");
-            tabela.innerHTML = "";
-
-            manutencoes.forEach((m, index) => {
-                let row = `<tr>
-                    <td>${m.maquina}</td>
-                    <td>${m.data}</td>
-                    <td>${m.descricao}</td>
-                    <td><button class="delete" onclick="deletarRegistro(${index})">Excluir</button></td>
-                </tr>`;
-                tabela.innerHTML += row;
-            });
-        }
-
-        function deletarRegistro(index) {
-            let manutencoes = JSON.parse(localStorage.getItem("manutencoes")) || [];
-            manutencoes.splice(index, 1);
-            localStorage.setItem("manutencoes", JSON.stringify(manutencoes));
-            atualizarTabela();
-        }
-
-        function filtrarTabela() {
-            let filtro = document.getElementById("filtro").value.toLowerCase();
-            let linhas = document.querySelectorAll("#tabelaManutencoes tr");
-
-            linhas.forEach((linha) => {
-                let colunaMaquina = linha.cells[0].textContent.toLowerCase();
-                linha.style.display = colunaMaquina.includes(filtro) ? "" : "none";
-            });
-        }
-
-        atualizarTabela(); // Carregar os dados ao abrir a página
-    </script>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbJRT4yjlR61xbI5ByU-L2GZOLxZ33Z3bZ-wrEI71UAf-3NQ/viewform?usp=dialog" 
+        width="1000" height="800" frameborder="0"  marginheight="0" marginwidth="0">Carregando…</iframe>
 
 </body>
 </html>

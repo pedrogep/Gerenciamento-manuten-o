@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manutenção</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Histórico de manutenção</title>
     <style>
         body {
             text-align: center;
@@ -42,19 +41,6 @@
 
         nav ol li a:hover {
             color: #ffcc00;
-        }
-
-        /* Centralizar a imagem */
-        .header {
-            margin: 40px 0 20px;
-        }
-
-        .header img {
-            width: 400px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Estilo dos botões */
@@ -95,14 +81,17 @@
         .historico:hover {
             background-color: #218838;
         }
+
+        /* Estilo do iframe */
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <div class="header">
-        <img src="logo_mecan.jpg" alt="Minha imagem" title="logo-manutenção">
-    </div>
 
     <!-- Menu de navegação -->
     <nav>
@@ -112,14 +101,11 @@
             <li><a href="registro.html">Registros de Manutenção</a></li>
         </ol>
     </nav>
+  
+    <h1>Histórico de Chamados</h1>
 
-    <h1>Abertura de chamados e gerenciamento de manutenções</h1>
-
-    <!-- Botões -->
-    <div class="buttons">
-        <a href="abrir_chamado.html">Abrir Chamado</a>
-        <a href="registro.html" class="registro">Registrar Manutenções</a>
-    </div>
+    <!-- Embutindo a planilha com o iframe -->
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Av7Gb_xUf7t2IoTy5pRYY1mq7RqV5pjoE0pjaolySfCFxDQpJ_MIcp0MVo_Qm0cwKZ4aycOO4z8J/pubhtml?widget=true&amp;headers=false"></iframe>
 
 </body>
 </html>

@@ -1,23 +1,109 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abrir chamados</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo do menu */
+        nav {
+            background-color: #007bff;
+            padding: 15px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ol li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ol li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ol li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Estilo dos botões */
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .buttons a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .historico {
+            background-color: #28a745; /* Verde para o histórico */
+        }
+
+        .historico:hover {
+            background-color: #218838;
+        }
+
+        /* Estilo do iframe */
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-    <ol>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="abrir_chamado.html">Abrir Chamado</a></li>
-        <li><a href="registro.html">Registros de manutenção</a></li>
 
-    </ol>
+    <!-- Menu de navegação -->
+    <nav>
+        <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="abrir_chamado.html">Abrir Chamado</a></li>
+            <li><a href="registro.html">Registros de manutenção</a></li>
+        </ol>
     </nav>
+
     <h2>Preencha o Formulário para abrir um chamado</h2>
+
+    <!-- Botões -->
+    <div class="buttons">
+        <a href="historico_chamados.html" class="historico">Consultar Histórico</a> <!-- Botão para consultar histórico -->
+    </div>
+
+    <!-- Formulário do Google -->
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScyhSmxNadgW9kWot8C8gHfnHR_wJJ6nUEZSslHrLv81x3N9A/viewform" 
-        width="1000" height="800" frameborder="0"  marginheight="0" marginwidth="0">Carregando…</iframe>
+        width="1000" height="800" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+    
 </body>
 </html>
