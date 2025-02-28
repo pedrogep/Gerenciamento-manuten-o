@@ -4,85 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Manutenção</title>
-<style>
-    body {
-        text-align: center;
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
-    nav {
-        background-color: #007bff;
-        padding: 10px;
-    }
-    nav ol {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    nav ol li {
-        display: inline;
-        margin: 0 15px;
-    }
-    nav ol li a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .container {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 50%;
-        margin: 20px auto;
-    }
-    input, textarea, button {
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-        padding: 10px;
-    }
-    button {
-        background-color: #28a745;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #218838;
-    }
-    .filter-container {
-        margin: 20px auto;
-        width: 50%;
-    }
-    table {
-        width: 80%;
-        margin: 20px auto;
-        border-collapse: collapse;
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    th, td {
-        padding: 10px;
-        border: 1px solid #ddd;
-    }
-    th {
-        background-color: #007bff;
-        color: white;
-    }
-    .delete {
-        background-color: #dc3545;
-        color: white;
-    }
-    .delete:hover {
-        background-color: #c82333;
-    }
-    /* Estilo dos botões */
-    .buttons {
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            position: relative;
+        }
+        nav ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ol li {
+            margin: 0 15px;
+        }
+        nav ol li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Estilo para o ícone de menu hamburguer */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 20px auto;
+        }
+        input, textarea, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .filter-container {
+            margin: 20px auto;
+            width: 50%;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .delete:hover {
+            background-color: #c82333;
+        }
+        /* Estilo dos botões */
+        .buttons {
             margin-top: 20px;
         }
 
@@ -111,32 +126,69 @@
         .historico:hover {
             background-color: #218838;
         }
+
         iframe {
             width: 100%;
             height: 800px;
             border: none;
         }
-</style>
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            nav ol {
+                flex-direction: column;
+                display: none; /* Oculta o menu padrão em telas pequenas */
+            }
+
+            nav ol.show {
+                display: flex; /* Exibe o menu ao clicar no ícone */
+            }
+
+            nav ol li {
+                margin: 10px 0;
+            }
+
+            nav ol li a {
+                font-size: 18px;
+            }
+
+            /* Exibe o ícone de menu */
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Menu de navegação -->
     <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Ícone de menu hamburguer -->
         <ol>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="abrir_chamado.html">Abrir Chamado</a></li>
-            <li><a href="registro.html">Registros de manutenção</a></li>
- 
+            <li><a href="registro.html">Manutenções</a></li>
         </ol>
     </nav>
+
     <div>
         <h2>Registro de Manutenção</h2>
-
     </div>
+
     <div class="buttons">
         <a href="historico_manutenção.html" class="historico">Consultar Histórico</a> <!-- Botão para consultar histórico -->
     </div>
 
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbJRT4yjlR61xbI5ByU-L2GZOLxZ33Z3bZ-wrEI71UAf-3NQ/viewform?usp=dialog" 
         width="1000" height="800" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+
+    <script>
+        // Função para alternar a exibição do menu
+        function toggleMenu() {
+            const menu = document.querySelector('nav ol');
+            menu.classList.toggle('show');
+        }
+    </script>
 
 </body>
 </html>

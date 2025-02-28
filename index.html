@@ -25,10 +25,12 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: center; /* Centraliza os itens do menu */
+            flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
         }
 
         nav ol li {
-            display: inline;
             margin: 0 20px;
         }
 
@@ -94,6 +96,25 @@
 
         .historico:hover {
             background-color: #218838;
+        }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            nav ol {
+                flex-direction: column; /* Empilha os itens do menu verticalmente */
+            }
+
+            nav ol li {
+                margin: 10px 0; /* Diminui o espaço entre os itens no menu */
+            }
+
+            nav ol li a {
+                font-size: 18px; /* Ajuste do tamanho da fonte para telas menores */
+            }
+
+            .header img {
+                width: 100%; /* Faz a imagem se ajustar a tela em dispositivos menores */
+            }
         }
     </style>
 </head>

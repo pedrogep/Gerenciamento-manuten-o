@@ -19,16 +19,19 @@
             background-color: #007bff;
             padding: 15px 0;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         nav ol {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav ol li {
-            display: inline;
             margin: 0 20px;
         }
 
@@ -42,6 +45,17 @@
 
         nav ol li a:hover {
             color: #ffcc00;
+        }
+
+        /* Estilo para o ícone de menu hamburguer */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
         }
 
         /* Estilo dos botões */
@@ -81,12 +95,38 @@
             height: 800px;
             border: none;
         }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            nav ol {
+                flex-direction: column;
+                display: none; /* Oculta o menu padrão em telas pequenas */
+            }
+
+            nav ol.show {
+                display: flex; /* Exibe o menu ao clicar no ícone */
+            }
+
+            nav ol li {
+                margin: 10px 0;
+            }
+
+            nav ol li a {
+                font-size: 18px;
+            }
+
+            /* Exibe o ícone de menu */
+            .menu-icon {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Menu de navegação -->
     <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Ícone de menu hamburguer -->
         <ol>
             <li><a href="index.html">Início</a></li>
             <li><a href="abrir_chamado.html">Abrir Chamado</a></li>
@@ -105,5 +145,13 @@
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScyhSmxNadgW9kWot8C8gHfnHR_wJJ6nUEZSslHrLv81x3N9A/viewform" 
         width="1000" height="800" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
     
+    <script>
+        // Função para alternar a exibição do menu
+        function toggleMenu() {
+            const menu = document.querySelector('nav ol');
+            menu.classList.toggle('show');
+        }
+    </script>
+
 </body>
 </html>
